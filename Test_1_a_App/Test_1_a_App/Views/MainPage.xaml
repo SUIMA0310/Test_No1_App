@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:behaviors="clr-namespace:Test_1_a_App.Behaviors"
+             x:Class="Test_1_a_App.Views.MainPage"
+             Title="{Binding Title.Value}">
+
+    <Grid>
+        <!-- MAPを表示 -->
+        <maps:Map IsShowingUser="true" MapType="Street">
+            <maps:Map.Behaviors>
+                <!-- Binsingできない項目をBehaviorを使いBinding -->
+                <behaviors:MapBehavior MapSpan="{Binding MapSpan.Value}" Pins="{Binding Pins.Value}"/>
+            </maps:Map.Behaviors>
+        </maps:Map>
+    </Grid>
+    
+</ContentPage>
